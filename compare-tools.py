@@ -149,7 +149,7 @@ def run_dataset(dataset, neg, comment):
         if key in keys_to_use:
             new_dataset[key] = dataset[key]
     set_to_use = new_dataset
-
+    print(f"There are {len(set_to_use)} genomes")
     new_neg = {}
     for key in neg:
         if key in keys_to_use:
