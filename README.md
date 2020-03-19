@@ -21,3 +21,5 @@ Software versions, and modes of installation are indicated in 'software_info.tsv
 for xenoGI, the genomes and trees are indicated in 'xenoGI_supp.tsv'
 
 For the spots of the E. coli MAGs pangenome, they are all listed in 'spots_summary.tsv'
+
+The benchmark metrics can be rerun by launching 'compare-tools.py'. It only requires python>=3.6, along with all of the files included in the benchmark/ directory.
