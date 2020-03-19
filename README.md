@@ -13,4 +13,11 @@ Some were downloaded from [islandviewer website](http://www.pathogenomics.sfu.ca
 PredictBias predictions were downloaded from [PredictBias website](
 http://www.bioinformatics.org/sachbinfo/cgi-bin/analyzed_genomes.cgi)
 
-All others were run on genome versions indicated in 'Strains_RefSeqID.tsv'
+All others were run on genome versions indicated in 'Strains_RefSeqID.tsv'. This table lists all the genome from the original benchmark from Bertelli et. al. 2018, and indicated whether each genome has been used or not. 
+If not used, it is usually because there were not enough genomes to build pangenomes at the time of the benchmark.
+
+Software versions, and modes of installation are indicated in 'software_info.tsv'
+
+for xenoGI, the genomes and trees are indicated in 'xenoGI_supp.tsv'
+
+For the spots of the E. coli MAGs pangenome, they are all listed in 'spots_summary.tsv'

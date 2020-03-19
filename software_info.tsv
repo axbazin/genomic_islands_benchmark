@@ -1,0 +1,12 @@
+software	C-dataset	L-dataset	installed from	Input type	versions (or date of access if NA, or last commit)	problems/remarks
+panRGP	Computed	Computed	conda, github: https://github.com/labgem/PPanGGOLiN	fasta list, or gff list, or gbk/gbff list, or a pangenome in HDF5	1.1.x	need multiple genomes from the same clade
+SigiHMM	Computed	Computed	conda (Colombo)	.embl 	Colombo 4.0	
+SigiCFR	Computed	Computed	conda (Colombo)	.embl 	Colombo 4.0	
+AlienHunter	Computed	Computed	conda	.fasta	1.7	
+PredictBias	Downloaded	Downloaded	web server: http://www.bioinformatics.org/sachbinfo/predictbias.html	.gbk	12 dec. 2019	some genomes have no predictions
+IslandViewer4	Downloaded 	Downloaded	web server: https://www.pathogenomics.sfu.ca/islandviewer/	.gbk or .embl	27 nov. 2019	need multiple genomes
+Islandpath-dimob	Computed	Computed	github: https://github.com/brinkmanlab/islandpath	.gbk	0d502eb	
+ZislandExplorer	Computed	Computed	their own site: http://cefg.uestc.cn/Zisland_Explorer/download.html	.fasta	1.2	
+GI_cluster	Computed	Computed	github: https://github.com/icelu/GI_Cluster	.fasta	1.0	
+XenoGI	No	Computed	pip	.gbk and .fasta, phylogenetic tree in newick	2.2.2000	need multiple genomes
+IslandCafe	Computed	Computed	github: https://github.com/mehuljani/IslandCafe	.gbk	73fda5d	

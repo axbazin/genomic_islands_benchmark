@@ -9,6 +9,7 @@ import time
 from statistics import mean
 
 class GI:
+    """ basic class to manipulate GIs with some abstraction"""
     def __init__(self, contig, ID, start, stop):
         self.contig = contig
         self.id = ID
@@ -28,12 +29,14 @@ def get_references(filename):
     return myref
 
 def sort_predicted(predicted):
+    """ sort GIs based on their start position"""
     new = {}
     for key, val in predicted.items():
         new[key] = sorted(val, key = lambda x : x.start)
     return new
 
 def get_intersect_pairs(pairs1, pairs2):
+    """compute intersection overlap between two lists of pairs of integers representing positions"""
     i = 0
     j = 0
     inter = 0
@@ -58,12 +61,14 @@ def get_intersect_pairs(pairs1, pairs2):
     return inter
 
 def overlap(pairs):
+    """ compute a position overlap between integers"""
     over = 0
     for pair in pairs:
         over += pair[1] - pair[0]
     return over
 
 def compute_score(pred, pos ,neg, name):
+    """ computes metrics for a given set of GIs compared to positive and negative set"""
     # print(f"Computing the scores of {name} compared to positive and negative datasets.")
     TP = 0
     FP = 0
@@ -114,6 +119,7 @@ def compute_score(pred, pos ,neg, name):
     return results
 
 def link_GI_to_predicted(filename, predicted):
+    """ links GIs of a software to a contig"""
     curr_GI = defaultdict(list)
     c = 0
     with open(filename,"r") as f:
@@ -131,16 +137,18 @@ def link_GI_to_predicted(filename, predicted):
     return sort_predicted(curr_GI)
 
 def print_scores(*args):
+    """ Prints scores on stdout"""
     args = sorted(args, key = lambda x : x["MCC"], reverse=True)
     print("Tool\tMCC\tF1 score\tAccuracy\tPrecision\tRecall")
     for arg in args:
         print(f"{arg['name']}\t{arg['MCC']}\t{arg['F1 score']}\t{arg['Accuracy']}\t{arg['Precision']}\t{arg['Recall']}")
 
 
-def run_dataset(dataset, neg, comment):
+def run_dataset(dataset, neg, comment=""):
+    """ run a benchmark using a given dataset of reference GIs and a set of negative regions"""
     set_to_use = dataset
     print(comment)
-    refseqpanRGP = link_GI_to_predicted('dataset_panRGP.txt',set_to_use)
+    refseqpanRGP = link_GI_to_predicted('all_gis_panRGP.txt',set_to_use)
 
     keys_to_use = { key: val for key, val in refseqpanRGP.items() if key in set_to_use }
 
