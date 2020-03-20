@@ -1,6 +1,6 @@
-# genomic_islands_benchmark
+# genomic islands benchmark
 
-Final formated versions of each tool's genomic island predictions.
+Final formated versions of each tool genomic island predictions.
 
 Most of those have been parsed to a 4 column tsv format as follow :
 - Accession_number : Indicates the contig ID (NC_XXX)
