@@ -1,5 +1,5 @@
 software	C-dataset	L-dataset	installed from	Input type	versions (or date of access if NA, or last commit)	problems/remarks
-panRGP	Computed	Computed	conda, github: https://github.com/labgem/PPanGGOLiN	fasta list, or gff list, or gbk/gbff list, or a pangenome in HDF5	1.1.x	need multiple genomes from the same clade
+panRGP	Computed	Computed	conda, github: https://github.com/labgem/PPanGGOLiN	fasta list, or gff list, or gbk/gbff list, or a pangenome in HDF5	1.1.72	need multiple genomes from the same clade
 SigiHMM	Computed	Computed	conda (Colombo)	.embl 	Colombo 4.0	
 SigiCFR	Computed	Computed	conda (Colombo)	.embl 	Colombo 4.0	
 AlienHunter	Computed	Computed	conda	.fasta	1.7	
