@@ -1,37 +1,44 @@
-# panRGP supplementary data
+# Supplementary data of panRGP publication
 
-# genomic islands benchmark
+The panRGP method is available in the PPanGGOLiN software suite : https://github.com/labgem/PPanGGOLiN
 
-Final formated versions of each tool genomic island predictions.
+## Benchmark
 
-Most of those have been parsed to a 4 column tsv format as follow :
-- Accession_number : Indicates the contig ID (NC_XXX)
-- Start : The start position  of the genomic island
-- End : The end (or stop) position of the genomic island
-- Prediction_method : The software, or method, used to predict this genomic island
+panRGP GI predictions were benchmarked along 10 other tools on a reference dataset ([Bertelli et. al. 2018](https://doi.org/10.1093/bib/bby042)).
 
-Software versions, and modes of installation of each software used are indicated in 'software_info.tsv'
+In the benchmark directory :
 
-Some were downloaded from [islandviewer website](http://www.pathogenomics.sfu.ca/islandviewer/download/), if you are looking for up-to-date data from their tools you should download it from there.
+Files with the ‘all_gis’ prefix list all genomic islands predicted for each tool. They have the following format :
+- Accession_number : indicates the contig ID (NC_XXX)
+- Start : the start position  of the genomic island
+- End : the end (or stop) position of the genomic island
+- Prediction_method : the software, or method, used to predict this genomic island
 
-PredictBias predictions were downloaded from [PredictBias website](
-http://www.bioinformatics.org/sachbinfo/cgi-bin/analyzed_genomes.cgi)
+Files with the “*_dataset.txt” suffix contains data of the reference dataset downloaded from  [here](http://www.pathogenomics.sfu.ca/islandviewer/download/)
 
-All others were run on genome versions indicated in 'Strains_RefSeqID.tsv'. This table lists all the genome from the original benchmark from Bertelli et. al. 2018, and indicated whether each genome has been used or not. 
-If not used, it is usually because there were not enough genomes to build pangenomes at the time of the benchmark.
+The 'software_info.tsv' file provides all software versions and modes of installation.
 
-Software versions, and modes of installation are indicated in 'software_info.tsv'
+The 'Strains_RefSeqID.tsv' file lists all genome accession numbers along with strain names and taxids of the benchmark dataset. Only genomes flagged as true in the “use” field were considered for the benchmark.
 
-for xenoGI, the genomes and trees are indicated in 'xenoGI_supp.tsv'
+ 'xenoGI_supp.tsv' file indicates the genomes and trees used with XenoGI.
 
-The benchmark metrics can be rerun by launching 'compare-tools.py'. It only requires python>=3.6, along with all of the files included in the benchmark/ directory
+The  'compare-tools.py' script (python>=3.6) computes benchmark metrics using the “all_gis*” files and the “*_dataset.txt” files.
 
-# leuX
+‘Genomes_used.txt’ lists all of the genomes from RefSeq that were used to compute the pangenomes. It is a two column tsv, the first column indicates the genome RefSeq ID and the second indicates the taxid it belongs to.
 
-For the spots of the E. coli pangenome built from MAGs, they are all listed in 'leuX/spots_summary.tsv'.
+## leuX hotspot study
 
-the fasta sequences used to find the leuX hotspot are in 'leuX/border_leuX.fasta'.
+The leuX hotspot was studied from E. coli  MAGs of [pasolli et. al. 2019](https://doi.org/10.1016/j.cell.2019.01.001).
 
-The list of MAGs used along with statistics for each MAG is given is 'leuX/organisms_statistics.tsv'.
+In the leuX directory :
 
-The graph of the spot is given in 'leuX/spot_leuX.gexf'.
+'Organisms_statistics.tsv' file  lists the MAGs used along with statistics for each MAG.
+
+'spots_summary.tsv' file lists all the predicted spots among the MAGs of E. coli.
+
+'border_leuX.fasta' file lists the fasta sequences used to find the leuX hotspot. The following command was used :
+
+`ppanggolin align --pangenome pangenome.h5 --getinfo --draw_related --proteins border_leuX.fasta --output leuX`
+
+'spot_leuX.gexf' is the GEXF file of the studied spot graph.
+‘Info_input_prot.tsv’ file lists all the RGPs and spots where the aligned proteins are found. Both of those files were generated with the previous command.
