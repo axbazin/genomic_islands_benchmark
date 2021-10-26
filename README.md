@@ -2,7 +2,7 @@
 
 The panRGP method is available in the PPanGGOLiN software suite : https://github.com/labgem/PPanGGOLiN
 
-This repository is related to the following paper: [Bazin et. al. 2020](https://doi.org/10.1101/2020.03.26.007484)
+This repository is related to the following paper: [Bazin et. al. 2020](https://doi.org/10.1093/bioinformatics/btaa792)
 
 ## Benchmark
 
